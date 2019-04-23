@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.sample.pixel.R;
 
@@ -34,8 +35,11 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+//Footer text updater
+        TextView FooterText = (TextView)findViewById(R.id.footer_text);
+        FooterText.setText("Sell works from your collection through Pixmato!");
 
-//        tabLayout.getTabAt(0).setIcon(R.drawable.ic_assignment);
+
         tabLayout.getTabAt(0).setText("Artists");
         tabLayout.getTabAt(1).setText("For You");
         tabLayout.getTabAt(2).setText("Auctions");

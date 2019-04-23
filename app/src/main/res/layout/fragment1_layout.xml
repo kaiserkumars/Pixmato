@@ -4,7 +4,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/footer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="#000"-->
+        <!--android:gravity="center" >-->
 
+        <!--<TextView-->
+            <!--android:id="@+id/footer_text"-->
+            <!--android:singleLine="true"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Hello"-->
+            <!--android:textColor="#FFF"-->
+            <!--android:textSize="18sp" />-->
+    <!--</RelativeLayout>-->
 
     <Button
         android:layout_marginTop="15dp"

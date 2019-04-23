@@ -8,6 +8,7 @@
     tools:context="com.sample.pixel.MainActivity">
 
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -58,8 +59,24 @@
         </RelativeLayout>
 
 
+        <RelativeLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="49dp"
+            android:background="#000"
+            android:gravity="center">
 
-
+            <TextView
+                android:id="@+id/footer_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="Hello"
+                android:textColor="#FFF"
+                android:textSize="18sp" />
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
