@@ -56,7 +56,9 @@ public class Tab1Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment1_layout,container,false);
-        btnTEST = (Button) view.findViewById(R.id.btnTEST);
+//        btnTEST = (Button) view.findViewById(R.id.btnTEST);
+
+        //POPULATE USING API
         new FetchAPI().execute(urlString);
 
         //PROFILE IMAGE
@@ -185,7 +187,7 @@ public class Tab1Fragment extends Fragment {
             }
 
 //            System.out.println("Arraylist: ");
-//            System.out.println(imageUrls);
+            System.out.println(imageUrls);
 //            // Get ListView object from xml
 //            listView = (ListView) findViewById(R.id.list);
 //

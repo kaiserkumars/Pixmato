@@ -23,6 +23,10 @@
         <activity android:name=".ActivityTwo"></activity>
         <activity android:name=".ActivityThree"></activity>
         <activity android:name=".ActivityFour"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
