@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
+    useLibrary 'org.apache.http.legacy'
+
     defaultConfig {
         applicationId "com.com.actionbar"
         minSdkVersion 18
@@ -39,4 +41,6 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'org.json:json:20171018'
+
 }

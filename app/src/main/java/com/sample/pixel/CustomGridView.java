@@ -1,3 +1,5 @@
+//USED AS A DUMMY ADAPTER WITH STATIC IMAGE PROVIDER
+
 package com.sample.pixel;
 import android.content.Context;
 import android.view.LayoutInflater;

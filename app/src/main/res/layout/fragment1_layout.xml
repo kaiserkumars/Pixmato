@@ -17,11 +17,11 @@
              android:orientation="horizontal"
              android:id="@+id/profile_linear"
              android:layout_marginStart="15dp"
-             android:layout_marginTop="40dp">
+             android:layout_marginTop="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:id="@+id/profile_img"
                 />
              <LinearLayout
@@ -52,17 +52,17 @@
              android:layout_height="wrap_content"
              android:id="@+id/rel_image_grid"
              android:layout_marginBottom="5dp"
-             android:layout_marginTop="120dp">
+             android:layout_marginTop="90dp">
 
              <GridView
                  android:id="@+id/grid_view_image_text"
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:verticalSpacing="1dp"
-                 android:horizontalSpacing="1dp"
-                 android:columnWidth="140dp"
-                 android:gravity="center"
-                 android:numColumns="2" />
+                 android:horizontalSpacing="2dp"
+                 android:gravity="fill"
+                 android:numColumns="2"
+                 android:stretchMode="columnWidth"/>
 
          </RelativeLayout>
 
