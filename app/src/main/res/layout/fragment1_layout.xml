@@ -4,6 +4,70 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+    <!-- **************Profile*********** -->
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/profile_relative">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:id="@+id/profile_linear"
+             android:layout_marginStart="15dp"
+             android:layout_marginTop="40dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/profile_img"
+                />
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:orientation="vertical"
+
+                 >
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Pixmato"
+                     android:layout_marginStart="10dp"
+                     android:textStyle="bold"
+                     android:textSize="10pt"/>
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="Zomato"
+                     android:layout_marginStart="10dp"/>
+             </LinearLayout>
+
+
+         </LinearLayout>
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/rel_image_grid"
+             android:layout_marginBottom="5dp"
+             android:layout_marginTop="120dp">
+
+             <GridView
+                 android:id="@+id/grid_view_image_text"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:verticalSpacing="1dp"
+                 android:horizontalSpacing="1dp"
+                 android:columnWidth="140dp"
+                 android:gravity="center"
+                 android:numColumns="2" />
+
+         </RelativeLayout>
+
+
+     </RelativeLayout>
     <!--<RelativeLayout-->
         <!--android:id="@+id/footer"-->
         <!--android:layout_width="match_parent"-->
@@ -22,22 +86,26 @@
             <!--android:textSize="18sp" />-->
     <!--</RelativeLayout>-->
 
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnTEST"
-        android:text="TESTBTN 1"/>
+    <!--<Button-->
+        <!--android:layout_marginTop="15dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/btnTEST"-->
+        <!--android:text="TESTBTN 1"/>-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="25sp"
-        android:text="Tab1"
-        android:layout_marginTop="40dp"
-        android:id="@+id/textTab1"
-        android:layout_below="@+id/btnTEST"/>
+
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:textSize="25sp"-->
+        <!--android:text="Tab1"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:id="@+id/textTab1"-->
+        <!--android:layout_below="@+id/btnTEST"/>-->
+
+
 
 </RelativeLayout>
