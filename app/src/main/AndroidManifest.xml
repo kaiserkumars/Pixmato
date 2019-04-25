@@ -23,10 +23,16 @@
         <activity android:name=".ActivityTwo"></activity>
         <activity android:name=".ActivityThree"></activity>
         <activity android:name=".ActivityFour"></activity>
+        <activity android:name=".MapsActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDyWRW3ZySSn-kn1wAQ5PA5HJ6uNHdtlkM"/>
+
     </application>
+
 
 </manifest>

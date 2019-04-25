@@ -12,9 +12,6 @@ import android.widget.TextView;
 
 import com.sample.pixel.R;
 
-/**
- * Created by User on 4/15/2017.
- */
 
 public class ActivityThree extends AppCompatActivity {
 

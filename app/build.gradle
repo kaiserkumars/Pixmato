@@ -43,6 +43,8 @@ dependencies {
     compile 'com.github.chrisbanes:PhotoView:2.0.0'
     compile 'org.json:json:20171018'
     implementation 'com.android.support:recyclerview-v7:25.1.1'
+    compile 'com.google.android.gms:play-services-maps:9.0.2'
+    compile 'com.google.maps.android:android-maps-utils:0.4.3'
 
 
 }

@@ -1,10 +1,13 @@
+//@Deepak
 package com.sample.pixel;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -21,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
 
+//    final Fragment fragment2 = new MapFragmentBottom();
+//    final FragmentManager fm = getSupportFragmentManager();
+//    Fragment active;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-//Footer text updater
+       //Footer text updater
         TextView FooterText = (TextView)findViewById(R.id.footer_text);
         FooterText.setText("Sell works from your collection through Pixmato!");
 
@@ -47,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavView_Bar);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
+
+        //Bottom Fragments
+
+//        fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
+
         MenuItem menuItem = menu.getItem(0);
         menuItem.setChecked(true);
 
@@ -64,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.ic_books:
+//                        fm.beginTransaction().show(fragment2).commit();
                         Intent intent2 = new Intent(MainActivity.this, ActivityTwo.class);
                         startActivity(intent2);
                         break;
