@@ -42,6 +42,7 @@ public class Tab2Fragment extends Fragment {
     private ArrayList<FruitModel> imageModelArrayList;
     private FruitAdapter adapter;
     GridView androidGridView;
+    ExpandableHeightGridView mAppsGrid;
 
     //    private Button btnTEST;
     private final static String urlString = "http://10.0.2.2:5000/multiImage";
@@ -60,6 +61,11 @@ public class Tab2Fragment extends Fragment {
         initData();
         new Tab2Fragment.FetchAPIf2().execute(urlString);
 
+        //ExpandableHeightGridView
+        mAppsGrid = (ExpandableHeightGridView)view.findViewById(R.id.f2grid_view_image_text);
+        mAppsGrid.setExpanded(true);
+
+        // Recycler
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         imageModelArrayList = eatFruits();
         adapter = new FruitAdapter(getContext(), imageModelArrayList);
@@ -87,8 +93,9 @@ public class Tab2Fragment extends Fragment {
     private void initData()
     {
         imgId = new int[] {
-                R.drawable.ic_home_black_24dp,R.drawable.ic_assignment,R.drawable.ic_map_black_24dp,R.drawable.ic_favorite_border_black_24dp,
-                R.drawable.ic_mode_comment_black_24dp
+                R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq,
+                R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq,
+                R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq,R.drawable.orangesq
         };
 
 

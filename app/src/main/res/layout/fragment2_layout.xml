@@ -1,73 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-    >
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_marginLeft="4dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:textColor="#000"
+        android:textColor="#a9a9a9"
         android:textStyle="bold"
         android:fontFamily=""
         android:text="Recommended Food Fairs"/>
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_gravity="center_vertical"
-        android:scrollbars="none"
-        >
+    <!--<HorizontalScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="90dp"-->
+        <!--android:layout_gravity="center_vertical"-->
+        <!--android:scrollbars="none"-->
+        <!--&gt;-->
 
         <LinearLayout
             android:id="@+id/hor_gallery"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
+            android:layout_height="match_parent"
             android:orientation="horizontal" >
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginTop="15dp"/>
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal"
+                app:reverseLayout="false"
+                />
 
         </LinearLayout>
 
-    </HorizontalScrollView>
+    <!--</HorizontalScrollView>-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30dp"
-        android:textColor="#000"
+        android:textColor="#a9a9a9"
         android:textStyle="bold"
         android:fontFamily=""
-        android:text="Recently Viewed"/>
-    <RelativeLayout
+        android:text="Recently Viewed"
+    android:layout_marginBottom="5dp"/>
+
+    <com.sample.pixel.ExpandableHeightGridView
+        android:id="@+id/f2grid_view_image_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rel_image_grid"
-        android:layout_marginBottom="5dp"
-         >
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:horizontalSpacing="2dp"
+        android:isScrollContainer="false"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="20dp"
 
-        <GridView
-            android:id="@+id/f2grid_view_image_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:verticalSpacing="1dp"
-            android:horizontalSpacing="2dp"
-            android:gravity="fill"
-            android:numColumns="2"
-            android:stretchMode="columnWidth"/>
+        />
 
-    </RelativeLayout>
+        <!--<GridView-->
+            <!--android:id="@+id/f2grid_view_image_text"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="fill"-->
+            <!--android:horizontalSpacing="2dp"-->
+            <!--android:numColumns="2"-->
+            <!--android:stretchMode="columnWidth"-->
+            <!--android:verticalSpacing="1dp" />-->
 </LinearLayout>
 
 
@@ -93,4 +101,4 @@
         <!--android:layout_below="@+id/btnTEST"/>-->
 
 
-</RelativeLayout>
+</ScrollView>
