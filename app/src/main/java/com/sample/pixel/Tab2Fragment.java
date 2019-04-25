@@ -44,7 +44,6 @@ public class Tab2Fragment extends Fragment {
     GridView androidGridView;
     ExpandableHeightGridView mAppsGrid;
 
-    //    private Button btnTEST;
     private final static String urlString = "http://10.0.2.2:5000/multiImage";
 
     ArrayList<String> imageUrls = new ArrayList<String>();
