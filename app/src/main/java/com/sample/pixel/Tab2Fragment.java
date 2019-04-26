@@ -44,7 +44,7 @@ public class Tab2Fragment extends Fragment {
     GridView androidGridView;
     ExpandableHeightGridView mAppsGrid;
 
-    private final static String urlString = "http://10.0.2.2:5000/multiImage";
+    private final static String urlString = "https://pixmato.herokuapp.com/multiImage";
 
     ArrayList<String> imageUrls = new ArrayList<String>();
     ArrayList<String> authorUrls = new ArrayList<String>();

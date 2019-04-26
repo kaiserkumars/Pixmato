@@ -45,7 +45,7 @@ public class Tab1Fragment extends Fragment {
 //            R.drawable.ic_map_black_24dp, R.drawable.ic_assignment, R.drawable.ic_mode_comment_black_24dp, R.drawable.ic_autorenew,R.drawable.ic_search_black_24dp,
 //    R.drawable.ic_favorite_border_black_24dp, R.drawable.ic_assignment};
 
-    private final static String urlString = "http://10.0.2.2:5000/multiImage";
+    private final static String urlString = "https://pixmato.herokuapp.com/multiImage";
 
     ArrayList<String> imageUrls = new ArrayList<String>();
     ArrayList<String> authorUrls = new ArrayList<String>();
