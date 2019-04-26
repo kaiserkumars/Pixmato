@@ -30,34 +30,72 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     // Declare a variable for the cluster manager.
-    private ClusterManager<StringClusterItem> mClusterManager;
+    private ClusterManager<MarkerClusterItem> mClusterManager;
 
 
 
+    private static final double LAT =  -8.101379;
+    private static final double LNG =  112.147751;
     @Override public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mClusterManager = new ClusterManager<>(this, mMap);
-        mMap.setOnCameraChangeListener(mClusterManager);
-        for (int i = 0; i < 10; i++) {
-            final LatLng latLng = new LatLng(-34 + i, 151 + i);
-            mClusterManager.addItem(new StringClusterItem("Marker #" + (i + 1), latLng));
-        }
-        mClusterManager.cluster();
+        setUpClusterer();
 
+//        mClusterManager = new ClusterManager<>(this, mMap);
 
+//        mMap.setOnCameraChangeListener(mClusterManager);
+
+//        mClusterManager.cluster();
+
+    }
+
+    private void setUpClusterer() {
+        // Position the map.
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(LAT,LNG), 10));
+
+        // Initialize the manager with the context and the map.
+        // (Activity extends context, so we can pass 'this' in the constructor.)
+        mClusterManager = new ClusterManager<MarkerClusterItem>(this, mMap);
+
+        // Point the map's listeners at the listeners implemented by the cluster
+        // manager.
+        mMap.setOnMarkerClickListener(mClusterManager);
+
+        // Add cluster items (markers) to the cluster manager.
+        addPlaces();
+
+        setRenderer();
 
     }
 
 
-    static class StringClusterItem implements ClusterItem {
+    private void addPlaces()
+    {
+        for (int i = 0; i < 10; i++) {
+            final LatLng latLng = new LatLng(-34 + i, 151 + i);
+            mClusterManager.addItem(new MarkerClusterItem("Marker #" + (i + 1), latLng));
+
+        }
+
+    }
+
+
+
+
+    private void setRenderer() {
+        MarkerClusterRenderer<MarkerClusterItem> clusterRenderer = new MarkerClusterRenderer<>(this, mMap, mClusterManager);
+        mClusterManager.setRenderer(clusterRenderer);
+    }
+
+    static class MarkerClusterItem implements ClusterItem {
 
         final String title;
         final LatLng latLng;
 
-        public StringClusterItem(String title, LatLng latLng) {
+        public MarkerClusterItem(String title, LatLng latLng) {
             this.title = title;
             this.latLng = latLng;
         }
+
 
         @Override public LatLng getPosition() {
             return latLng;
