@@ -68,6 +68,7 @@
             android:background="#000"
             android:gravity="center">
 
+<!-- FOOTER TEXT -->
             <TextView
                 android:id="@+id/footer_text"
                 android:layout_width="wrap_content"
@@ -75,7 +76,7 @@
                 android:singleLine="true"
                 android:text="Hello"
                 android:textColor="#FFF"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </RelativeLayout>
 
         <RelativeLayout
