@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -37,11 +39,34 @@ public class ActivityTwo extends AppCompatActivity implements OnMapReadyCallback
 
     String[] locArray = {"Gurgaon", "New Delhi", "Bombay", "Noida", "Kolkata", "Hyderabad", "Chennai"};
 
+
+    //BOTTOM SHEET
+    private SectionsPageAdapter mSectionsPageAdapter;
+    private ViewPager mViewPager;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
+
+        //ALERT SELECT DIALOG
         alertDialogbox();
+
+
+        //BOTTOM SHEET TABS
+        mSectionsPageAdapter = new SectionsPageAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.map_container);
+        setupViewPager(mViewPager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.map_tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.getTabAt(0).setText("All");
+        tabLayout.getTabAt(1).setText("Saved");
+        tabLayout.getTabAt(2).setText("Museums");
+        tabLayout.getTabAt(3).setText("Galleries");
+        tabLayout.getTabAt(4).setText("Fairs");
+
 
         //MAP LOCATION CHANGE TXT
         TextView locChange = (TextView)findViewById(R.id.map_current_loc);
@@ -54,10 +79,10 @@ public class ActivityTwo extends AppCompatActivity implements OnMapReadyCallback
 
 
         //MAP BOTTOM LIST
-        ArrayAdapter adapter = new ArrayAdapter<String>(this,
-                R.layout.map_listview_txt, locArray);
-        ListView listView = (ListView) findViewById(R.id.map_list);
-        listView.setAdapter(adapter);
+//        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+//                R.layout.map_listview_txt, locArray);
+//        ListView listView = (ListView) findViewById(R.id.map_list);
+//        listView.setAdapter(adapter);
 
 //        TextView title = (TextView) findViewById(R.id.activityTitle2);
 //        title.setText("This is ActivityTwo");
@@ -114,7 +139,7 @@ public class ActivityTwo extends AppCompatActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney, Australia, and move the camera.
-        LatLng sydney = new LatLng(-34, 151);
+        LatLng sydney = new LatLng(28.4, 77);
 //        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         mClusterManager = new ClusterManager<MarkerClusterItem>(this, mMap);
@@ -149,13 +174,13 @@ public class ActivityTwo extends AppCompatActivity implements OnMapReadyCallback
     {
         for (int i = 0; i < 10; i++) {
             final LatLng latLng = new LatLng(28.4 + i, 77.0 + i);
-            mClusterManager.addItem(new MarkerClusterItem("Marker #" + (i + 0.001), latLng));
+            mClusterManager.addItem(new MarkerClusterItem("Marker #" + (i + 0.000001), latLng));
 
         }
 
         for (int i = 0; i < 10; i++) {
-            final LatLng latLng = new LatLng(28.5 + i, 77.5 + i);
-            mClusterManager.addItem(new MarkerClusterItem("Marker #" + (i + 0.001), latLng));
+            final LatLng latLng = new LatLng(28.401 + i, 77.001 + i);
+            mClusterManager.addItem(new MarkerClusterItem("Marker #" + (i + 0.000001), latLng));
 
         }
 
@@ -207,6 +232,21 @@ public class ActivityTwo extends AppCompatActivity implements OnMapReadyCallback
         alert.show();
 
     }
+
+
+    //BOTTOM SHEET SETUP VIEWER PAGE
+
+    private void setupViewPager(ViewPager viewPager) {
+        SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
+        adapter.addFragment(new mapTab1Fragment());
+        adapter.addFragment(new mapTab2Fragment());
+        adapter.addFragment(new mapTab3Fragment());
+        adapter.addFragment(new mapTab4Fragment());
+        adapter.addFragment(new mapTab5Fragment());
+
+        viewPager.setAdapter(adapter);
+    }
+
     }
 
 
